@@ -3,44 +3,44 @@
 
     it("should be able to count 3 calls and return calls total", function(){
 
-      var billcall = radioBillTotal();
+      var radioVarCall = radioBillTotal();
 
-      billcall.Radiocall();
+      radioVarCall.Radiocall();
 
-      assert.equal(2.75, billcall.RadioCallTotal());
+      assert.equal(2.75, radioVarCall.RadioCallTotal());
 
     });
 
     it("should be able to count 5 sms's and return the total for those sms's", function(){
 
-      var totalbillsms = radioBillTotal();
+      var radioVarSms = radioBillTotal();
 
-      totalbillsms.Radiosms();
+      radioVarSms.Radiosms();
 
-      assert.equal(0.75, totalbillsms.RadioSmsTotal());
+      assert.equal(0.75, radioVarSms.RadioSmsTotal());
 
     });
 
     it("should be able to count sms's and calls", function(){
 
-      var totalbillsms = radioBillTotal();
-          var billcall = radioBillTotal();
+      var radioVarSms = radioBillTotal();
+          var radioVarCall = radioBillTotal();
 
-      totalbillsms.Radiosms();
-      billcall.Radiocall();
+      radioVarSms.Radiosms();
+      radioVarCall.Radiocall();
 
-      assert.equal(0.75, totalbillsms.RadioSmsTotal());
-      assert.equal(2.75, billcall.RadioCallTotal());
+      assert.equal(0.75, radioVarSms.RadioSmsTotal());
+      assert.equal(2.75, radioVarCall.RadioCallTotal());
 
     });
     it("should be able to count 5 calls plus 3 sms's totalCost", function(){
 
 
-      var totalbill = radioBillTotal();
-      totalbill.RadioTotals();
+      var radioVarTotalbill = radioBillTotal();
+      radioVarTotalbill.RadioTotals();
 
 
-      assert.equal(3.5, totalbill.RadioSmSnCalltotal());
+      assert.equal(3.5, radioVarTotalbill.RadioSmSnCalltotal());
 
     });
 
