@@ -1,17 +1,19 @@
-function radioBillTotal(billItemType){
+function radioBillTotal(){
 
-    var smsTotal = 0.75;
-    var callsTotal = 2.75;
-    var totalCost = 3.5;
+    var smsTotal = 0;
+    var callsTotal = 0;
 
 
-      function Radiosms(){
+
+      function Radiosms(value){
+        var billItemType = value;
         if (billItemType === "sms"){
             smsTotal += 0.75;
         }
       }
 
-      function Radiocall(){
+      function Radiocall(value){
+          var billItemType = value;
         if (billItemType === "call"){
             callsTotal += 2.75;
       }
@@ -28,19 +30,17 @@ function radioBillTotal(billItemType){
       function RadioTotals() {
 
       var totalCost= callsTotal + smsTotal;
+      return totalCost;
 
       }
 
-      function RadioSmSnCalltotal(){
-        return totalCost.toFixed(2);
-      }
+
 
       return {
         RadioSmsTotal,
         Radiocall,
         Radiosms,
         RadioCallTotal,
-        RadioSmSnCalltotal,
         RadioTotals,
       }
 
