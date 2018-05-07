@@ -25,7 +25,7 @@
 
     });
 
-    it("should be able to count sms's and calls", function(){
+    it("should be able to count 2 sms's and 3 calls", function(){
 
       var radioVarSms = radioBillTotal();
           var radioVarCall = radioBillTotal();
@@ -45,7 +45,7 @@
           var radioVarCall = radioBillTotal();
       var radioVarTotalbill = RadioTotals();
 
-  
+
         radioVarCall.Radiocall("call");
         radioVarSms.Radiosms("sms");
           radioVarCall.Radiocall("call");
