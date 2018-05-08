@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function(){
+
 // get a reference to the textbox where the bill type is to be entered
 var billTypeTextElement = document.querySelector(".billTypeText");
 //get a reference to the add button
@@ -13,24 +15,27 @@ var textTotalAddBtnElement = document.querySelector(".textTotalAddBtn");
 // * add the appropriate value to the running total
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen
-var textBillTota= textBillTotals();
+var textBillTo =  TextBillTotals();
 
-function textBillTotal(){
+ function textBillTotal(){
+
     // get the value entered in the billType textfield
-var totalCost= textBillTota.sctotal();
+var billTypeEntered= billTypeTextElement.value.trim();
+ textBillTo.Count(billTypeEntered)
 
-    callsTotalElem.innerHTML = textBillTota.callCount().toFixed(2);
-    smsTotalElem.innerHTML = textBillTota.smstotals().toFixed(2);
-    totalCostEleme.innerHTML = totalCost.toFixed(2);
+    callsTotalElem.innerHTML = textBillTo.callstotals();
+    smsTotalElem.innerHTML = textBillTo.smstotals();
+    totalCostEleme.innerHTML = textBillTo.total();
 
     //color the total based on the criteria
-    if (totalCost >= 50){
-        // adding the danger class will make the text red
-        totalCostEleme.classList.add("danger");
-    }
-    else if (totalCost >= 30){
-        totalCostEleme.classList.add("warning");
-    }
+    // if (totalCost >= 50){
+    //     // adding the danger class will make the text red
+    //     totalCostEleme.classList.add("danger");
+    // }
+    // else if (totalCost >= 30){
+    //     totalCostEleme.classList.add("warning");
+    // }
 };
 
 addToBillBtnElement.addEventListener('click', textBillTotal);
+});

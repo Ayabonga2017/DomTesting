@@ -1,20 +1,17 @@
-function textBillTotals(billTypeEntered){
+function TextBillTotals(){
 
   var smsTotal = 0;
   var callsTotal = 0;
 
 
 
-    function smsCount(value){
+    function Count(value){
       var billTypeEntered = value;
       if (billTypeEntered === "sms"){
           smsTotal += 0.75;
       }
-    }
 
-    function callCount(value){
-      var billTypeEntered = value;
-      if (billTypeEntered === "call"){
+      else if (billTypeEntered === "call"){
           callsTotal += 2.75;
     }
   }
@@ -37,10 +34,9 @@ function textBillTotals(billTypeEntered){
 
     return {
       smstotals,
-      callCount,
-      smsCount,
+      Count,
       callstotals,
-      total,
-    }
+      total
+    };
 
 }

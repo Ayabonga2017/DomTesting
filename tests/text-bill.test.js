@@ -1,12 +1,12 @@
 
-  describe("textBillTotals function", function(){
+  describe("TextBillTotals function", function(){
 
     it("should be able to count two calls", function(){
 
-      var billcall = textBillTotals();
+      var billcall = TextBillTotals();
 
-      billcall.callCount('call');
-      billcall.callCount('call');
+      billcall.Count('call');
+      billcall.Count('call');
 
       assert.equal(5.50, billcall.total());
 
@@ -14,13 +14,13 @@
 
   it("should be able to count 5 sms's", function(){
 
-     var totalbillsms = textBillTotals();
+     var totalbillsms = TextBillTotals();
     //
-      totalbillsms.smsCount("sms");
-        totalbillsms.smsCount("sms");
-          totalbillsms.smsCount("sms");
-            totalbillsms.smsCount("sms");
-              totalbillsms.smsCount("sms");
+      totalbillsms.Count("sms");
+        totalbillsms.Count("sms");
+          totalbillsms.Count("sms");
+            totalbillsms.Count("sms");
+              totalbillsms.Count("sms");
     //
     assert.equal(3.75, totalbillsms.smstotals());
     //
@@ -28,11 +28,11 @@
 
     it("should be able to count sms's and calls", function(){
     //
-      var totalbillsms = textBillTotals();
-        var billcall = textBillTotals();
+      var totalbillsms = TextBillTotals();
+        var billcall = TextBillTotals();
     //
-    totalbillsms.smsCount("sms");
-    billcall.callCount("call");
+    totalbillsms.Count("sms");
+    billcall.Count("call");
     //
       assert.equal(0.75, totalbillsms.smstotals());
       assert.equal(2.75, billcall.callstotals());
