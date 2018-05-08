@@ -39,25 +39,4 @@
       assert.equal(5.5, radioVarCall.RadioCallTotal());
 
     });
-    it("should be able to count 5 calls plus 3 sms's totalCost", function(){
-
-      var radioVarSms = radioBillTotal();
-          var radioVarCall = radioBillTotal();
-      var radioVarTotalbill = RadioTotals();
-
-
-        radioVarCall.Radiocall("call");
-        radioVarSms.Radiosms("sms");
-          radioVarCall.Radiocall("call");
-          radioVarSms.Radiosms("sms");
-            radioVarCall.Radiocall("call");
-            radioVarSms.Radiosms("sms");
-              radioVarCall.Radiocall("call");
-                radioVarCall.Radiocall("call");
-
-      assert.equal(16, radioVarTotalbill.RadioTotals());
-
-    });
-
-
-  })
+  });

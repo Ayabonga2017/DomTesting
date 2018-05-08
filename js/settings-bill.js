@@ -14,11 +14,6 @@ var warningLevelSetting= document.querySelector(".warningLevelSetting");
 var criticalLevelSetting = document.querySelector(".criticalLevelSetting");
 
 //add an event listener for when e add button is pressed
-
-var callsTotal = 0.00;
-var smsTotal = 0.00;
-var totalCost = 0.00;
-
 var smsCost = 0.0;
 var callCost = 1.50;
 var warningLevel = 40.00;
@@ -38,32 +33,27 @@ console.log(callCost);
 // * add the appropriate value to the running total
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen
-function totalSetting(){
+
     // get the value entered in the billType textfield
-    var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
-  if (checkedRadioBtn){
-      var billItemType = checkedRadioBtn.value
-      // billItemType will be 'call' or 'sms'
-  }if (totalCost >=criticalLevel) {
+    /*
 
-  } else {
-    if (billItemType === "call"){
-        callsTotal += callCost;
-      console.log(callCost);
-    }
-    else if (billItemType === "sms"){
-        smsTotal += smsCost;
-    }
-    totalCost = callsTotal + smsTotal;
-  }
+  }*/
     // update the correct total
+    var totalsettin= setiing();
 
+    function totalSetting(){
+      if (checkedRadioBtn){
+    var billItemType = checkedRadioBtn.value
 
-    callTotalSettings.innerHTML = callsTotal.toFixed(2);
-    smsTotalSettings.innerHTML = smsTotal.toFixed(2);
+var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+
+var totalCost= totalsettin.totalset();
+
+    callTotalSettings.innerHTML = totalsettin.Callstota().toFixed(2);
+    smsTotalSettings.innerHTML = totalsettin.SmStota().toFixed(2);
 
     totalSettings.innerHTML = totalCost.toFixed(2);
-
+if (totalCost >=criticalLevel) {
     //color the total based on the criteria
     if (totalCost >= criticalLevel){
         // adding the danger class will make the text red
