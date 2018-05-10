@@ -1,42 +1,38 @@
-function TextBillTotals(){
+function Textbilltotals() {
 
-  var smsTotal = 0;
-  var callsTotal = 0;
+  var calltex = 0;
+  var smstex = 0;
 
 
-
-    function Count(value){
-      var billTypeEntered = value;
-      if (billTypeEntered === "sms"){
-          smsTotal += 0.75;
-      }
-
-      else if (billTypeEntered === "call"){
-          callsTotal += 2.75;
+  function Count(billType) {
+// update the correct textbillcost
+    if (billType === "call") {
+      calltex += 2.75;
+      calltex.toFixed(2);
+    } else if (billType === "sms") {
+      smstex += 0.75;
+      smstex.toFixed(2);
     }
+
+    var totalcost = calltex + smstex;
+    return totalcost.toFixed(2);
   }
 
-    function smstotals(){
-    return  smsTotal;
-    }
+  function callstotals() {
 
-    function callstotals(){
-      return callsTotal;
-    }
+    return calltex.toFixed(2);
+  }
 
-    function total() {
+  function smstotals() {
 
-    var totalCost= callsTotal + smsTotal;
-    return totalCost;
-
-    }
+    return smstex.toFixed(2);
+  }
 
 
-    return {
-      smstotals,
-      Count,
-      callstotals,
-      total
-    };
+  return {
+    Count,
+    callstotals,
+    smstotals
+  }
 
 }

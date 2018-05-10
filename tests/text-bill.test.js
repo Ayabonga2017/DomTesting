@@ -1,44 +1,50 @@
+describe("The  Text bill Widget ", function() {
 
-  describe("TextBillTotals function", function(){
+  it("It should return the total of 5 calls that is equal to 'R13.75'", function() {
 
-    it("should be able to count two calls", function(){
+    var textbillvariable = Textbilltotals();
 
-      var billcall = TextBillTotals();
+    textbillvariable.Count("call");
+    textbillvariable.Count("call");
+    textbillvariable.Count("call");
+    textbillvariable.Count("call");
+    textbillvariable.Count("call");
 
-      billcall.Count('call');
-      billcall.Count('call');
+    assert.equal(13.75, textbillvariable.callstotals());
+  });
 
-      assert.equal(5.50, billcall.total());
+  it("It should return the total of 8 sms's that is equal to 'R6.00'", function() {
 
-    });
+    var textbillvariable = Textbilltotals();
 
-  it("should be able to count 5 sms's", function(){
+    textbillvariable.Count("sms");
+    textbillvariable.Count("sms");
+    textbillvariable.Count("sms");
+    textbillvariable.Count("sms");
+    textbillvariable.Count("sms");
+    textbillvariable.Count("sms");
+    textbillvariable.Count("sms");
+    textbillvariable.Count("sms");
 
-     var totalbillsms = TextBillTotals();
-    //
-      totalbillsms.Count("sms");
-        totalbillsms.Count("sms");
-          totalbillsms.Count("sms");
-            totalbillsms.Count("sms");
-              totalbillsms.Count("sms");
-    //
-    assert.equal(3.75, totalbillsms.smstotals());
-    //
-    });
+    assert.equal(6.00, textbillvariable.smstotals());
+  });
 
-    it("should be able to count sms's and calls", function(){
-    //
-      var totalbillsms = TextBillTotals();
-        var billcall = TextBillTotals();
-    //
-    totalbillsms.Count("sms");
-    billcall.Count("call");
-    //
-      assert.equal(0.75, totalbillsms.smstotals());
-      assert.equal(2.75, billcall.callstotals());
-    //
-     });
+  it("It should return the total cost of R0 for calls and sms's if there is no call or sms typed ", function() {
 
+    var textbillvariable = Textbilltotals();
 
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
+    textbillvariable.Count(" ");
 
-  })
+    assert.equal(textbillvariable.smstotals(), 0.00);
+    assert.equal(textbillvariable.smstotals(), 0.00);
+  });
+});
