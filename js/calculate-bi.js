@@ -1,8 +1,8 @@
-function CalculateBtn(billString) {
+function CalculateBtn(billStrings) {
 
   var smsTotal = 0;
   var callsTotal = 0;
-  var billItems = billString.split(",");
+  var billItems = billStrings.split(",");
   // a variable for the total phone bill.
   var billTotal = 0;
 
